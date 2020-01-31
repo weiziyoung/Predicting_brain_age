@@ -1,0 +1,10 @@
+FSLMULTIFILEQUIT=TRUE
+FSLGECUDAQ=cuda.q
+PATH=/usr/local/fsl/bin
+FSLTCLSH=/usr/local/fsl/bin/fsltclsh
+FSLMACHINELIST=
+FSLREMOTECALL=
+FSLWISH=/usr/local/fsl/bin/fslwish
+FSLDIR=/usr/local/fsl
+FSLLOCKDIR=
+FSLOUTPUTTYPE=NIFTI_GZ

@@ -1,0 +1,68 @@
+Transfer file
+rsync -avz --progress compress/NewYork  root@35.194.4.48:/root/final_project/
+ssh  -i ~/.ssh/server1 weiziyang@35.225.41.22
+Google cloud storage
+上传
+gsutil -m cp -r n4_bias gs://dissertation_wzy/n4_bias
+下载
+gsutil -m cp -r gs://dissertation_wzy/n4_bias n4_bias
+
+Ali cloud
+ ./ossutil appendfromfile local_file_name oss://bucket/object
+scp -r /home/work/sourcedir work@192.168.0.10:/home/work/   #拷贝文件夹，加-r参数
+scp zw1y18@yann.ecs.soton.ac.uk:/home/zw1y18/dissertation/output/loss2.png .
+
+scp zw1y18@yann.ecs.soton.ac.uk:/home/zw1y18/dissertation/logging/
+
+登录gcloud
+gcloud auth login
+
+切换根用户
+sudo -s
+
+重定向
+sudo bash -c "curl https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py>fslinstaller.py"
+
+GPU服务器
+ssh -i ~/.ssh/server1 weiziyang@35.230.6.161
+
+export PATH=/usr/local/fsl/bin:$PATH
+export FSLWISH=/usr/local/fsl/bin/fslwish
+export FSLDIR=/usr/local/fsl
+export FSLMACHINELIST=
+export FSLTCLSH=/usr/local/fsl/bin/fsltclsh
+export FSLREMOTECALL=
+export FSLGECUDAQ=cuda.q
+export FSLOUTPUTTYPE=NIFTI_GZ
+export FSLMULTIFILEQUIT=TRUE
+
+PATH=/usr/local/fsl/bin:$PATH
+FSLWISH=/usr/local/fsl/bin/fslwish
+FSLDIR=/usr/local/fsl
+FSLMACHINELIST=
+FSLTCLSH=/usr/local/fsl/bin/fsltclsh
+FSLREMOTECALL=
+FSLGECUDAQ=cuda.q
+FSLOUTPUTTYPE=NIFTI_GZ
+FSLMULTIFILEQUIT=TRUE
+
+$ export LC_ALL=C
+ssh-keygen -R
+
+sudo killall coreaudiod
+
+sudo gsutil -m cp -r . gs://dissertation_wzy/registration
+
+gsutil -m cp -r gs://dissertation_wzy/auto-seg.sh .
+
+学校服务器
+ssh zw1y18@yann.ecs.soton.ac.uk
+
+查看数量
+watch nvidia-smi
+
+上传gpu任务
+sbatch -p gpu --gres=gpu:1 <batch_script>
+https://hpc.soton.ac.uk/redmine/projects/iridis-5-support/wiki/Job_Submission
+
+celery -A mysite worker -l info
